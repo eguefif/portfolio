@@ -10,6 +10,7 @@
 	{% for project in projects %}
 	<p>
 		<h5>{{ project.title }}</h5>
+		<s url="{{ project.github }}">{{ project.github }}</a>
 		<p>{{ project.small_description }}<p>
 		<a href="{% url 'project' project.pk %}"> Read more </a>
 	</p>
