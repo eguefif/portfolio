@@ -1,0 +1,11 @@
+{% if projects %}
+	{% for project in projects %}
+	<p>
+		<h1>{{ project.title }}</h1>
+		<a href="{{ project.url }}">{{ project.url }}</a>
+		<p> {{ project.description }}</p>
+	</p>
+	{% endfor %}
+{% else %}
+	<p>No projects</p>
+{% endif %}
