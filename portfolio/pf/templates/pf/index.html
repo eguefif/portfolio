@@ -1,11 +1,19 @@
-{% if projects %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-witdh, initial-scale=1.0">
+	<title>Portfolio Emmanuel Guefif index</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
 	{% for project in projects %}
 	<p>
-		<h1>{{ project.title }}</h1>
-		<a href="{{ project.url }}">{{ project.url }}</a>
-		<p> {{ project.description }}</p>
+		<h5>{{ project.title }}</h5>
+		<p>{{ project.small_description }}<p>
+		<a href="{% url 'project' project.pk %}"> Read more </a>
 	</p>
 	{% endfor %}
-{% else %}
-	<p>No projects</p>
-{% endif %}
+
+</body>
+</html>

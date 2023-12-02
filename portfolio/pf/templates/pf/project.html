@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-witdh, initial-scale=1.0">
+	<title>Project {{ project.title }}</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<p>
+		<h1>{{ project.title }}</h1>
+		<a href="{{ project.github }}"> {{ project.url }} </a>
+		<p>{{ project.description }}<p>
+		<h6>Skills</h6>
+		<ul>
+			{% for skill in skills %}
+			<li>skill.name: skill.description</li>
+			{% endfor %}
+		</ul>
+		<h6>Technologies</h6>
+		<ul>
+			{% for technology in technologies %}
+			<li>technology.name</li>
+			{% endfor %}
+		</ul>
+	</p>
+</body>
+</html>
