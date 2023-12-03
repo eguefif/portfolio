@@ -3,26 +3,28 @@
 <head>
 	<meta name="viewport" content="width=device-witdh, initial-scale=1.0">
 	<title>Project {{ project.title }}</title>
-	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 	<p>
-		<h1>{{ project.title }}</h1>
-		<a href="{{ project.github }}"> {{ project.url }} </a>
+		<h2>{{ project.title }}</h2>
+		<a href="{{ project.github }}"> {{ project.github }} </a>
 		<p>{{ project.description }}<p>
-		<h3>Skills</h3>
+		<h4>Skills</h4>
 		<ul>
 			{% for skill in skills %}
 			<li>{{ skill.name }} : {{ skill.description }}</li>
 			{% endfor %}
 		</ul>
-		<h3>Technologies</h3>
+		<h4>Technologies</h4>
 		<ul>
 			{% for technology in technologies %}
 			<li>{{ technology.name }} </li>
 			{% endfor %}
 		</ul>
+		{% if project.image %}
+			<img src="{{ project.image.url }}">
+		{% endif %}
 	</p>
 	<p>
 	<a href="{% url 'index' %}">index</a>
