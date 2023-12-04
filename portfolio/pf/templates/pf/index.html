@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+	<head>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'pf/style.css' %}">
+	</head>
 <head>
 	<meta name="viewport" content="width=device-witdh, initial-scale=1.0">
 	<title>Portfolio Emmanuel Guefif index</title>
@@ -7,13 +11,16 @@
 </head>
 
 <body>
+	<div class="content">
 	{% for project in projects %}
-	<p>
-		<h3 style="font-family: Comic Sans MS">{{ project.title }}</h3>
+	<h1>Welcome</h1>
+	<h1>Welcome</h1>
+	<div class="project_overview">
+		<h2>{{ project.title }}</h2>
 		<p>{{ project.small_description }}<p>
 		<a href="{% url 'project' project.pk %}"> Read more </a>
-	</p>
+	</div>
 	{% endfor %}
-
+	</div>
 </body>
 </html>

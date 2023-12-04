@@ -1,1 +1,51 @@
+*{
+	margin: 0;
+	padding: 0;
+	letter-spacing: 2px;
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+	box-sizing: border-box;
+}
 
+body {
+	display: flex;
+	justify-content: left;
+	align-items: top;
+	min-height: 100vh;
+	font-size: 15px;
+	background: #000;
+	position: relative;
+}
+
+.content
+{
+	position: relative;
+}
+
+.content h1 {
+	position: absolute;
+	font-size: 8em;
+	animation: 4s slidein;
+}
+
+.content h1:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 2px #03a9f4;
+}
+
+@keyframes slidein {
+	from {
+		margin-left: 100%;
+		width: 300%;
+	}
+
+	to {
+	margin-left: 0%;
+	width: 100%;
+	}
+}
+
+.project_overview {
+	position: relative;
+	translate(+100%, 100%);
+}
