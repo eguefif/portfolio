@@ -18,8 +18,8 @@ def project(request, pk):
     technologies = Technology.objects.all().filter(
             project__title__contains=project.title)
     context = {
-            "project": project,
+            "projects": project,
             "skills": skills,
             "technologies": technologies,
             }
-    return render(request, "pf/project.html", context)
+    return render(request, "pf/base.html", context)
