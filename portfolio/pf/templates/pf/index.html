@@ -134,7 +134,7 @@
             </div>
         </section>
 
-        <!-- Projects -->
+<!-- Projects -->
         <section id="projects" class="projects my-5">
             <div class="container">
                 <div class="text-center mb-5">
@@ -146,17 +146,19 @@
                     <p class="lead">Here is sample of my projects.</p>
                 </div>
                 <div class="row">
-					{% for project in project %}
+					{% for project in projects %}
                     <div class="col md-6 mb-4">
                         <div class="card project shadow-lg rounded-3">
-                            <img src="images/minirt.png" alt="" class="card-image-top">
+							<img src="{{ project.image.url }}" alt="" class="project-img rounded-3">
                             <div class="card-body">
-                                <h3 class="text-uppercase fw-bold">Minirt</h3>
-                            <a
-                            class="btn btn-primary text-white mt-4 align-self-start" 
-                            data-bs-toggle="modal" 
-                            data-bs-target="#modal1"> More Info
-                            </a>
+								<center>
+									<h3 class="card-title text-uppercase fw-bold">{{ project.title }}</h3>
+									<a
+									class="btn btn-primary text-white mt-4 align-self-start" 
+									data-bs-toggle="modal" 
+									data-bs-target="#modal{{ project.n }}"> More Info
+									</a>
+								</center>
                             </div>
                         </div>
                     </div>
@@ -167,63 +169,96 @@
 
         <!-- modal 1 -->
         {% for project in projects %}
-        <div id="modal1" class="modal fade">
+		<div id="modal{{ project.n }}" class="modal fade">
             <div class="modal-dialog modal-xl mt-7">
                 <div class="modal-content p-2">
                     <div class="row">
                         <div class="col-lg-9">
                             <div class="image-container">
-                                <div class="carousel slide" id="slider">
-                                    <div class="carousel-indicators">
-                                        <button class="active" data-bs-slide-to="0" data-bs-target="#slider"></button>
-                                        <button class="active" data-bs-slide-to="1" data-bs-target="#slider"></button>
-                                        <button class="active" data-bs-slide-to="2" data-bs-target="#slider"></button>
-                                    </div>
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="./images/minirt.png" alt="" class="d-block w-100"/>
+								{% if project.img_nbr == 1 %}
+									<img src="{{ project.image.url }}" class="d-block w-100">
+								{% elif project.img_nbr > 1 %}
+									<div class="carousel slide" id="slider">
+										<div class="carousel-indicators">
+                                            {% for img in project.images %}
+											<button class="active" data-bs-slide-to="{{ img.n }}" data-bs-target="#slider"></button>
+                                            {% endfor %}
+										</div>
+										<div class="carousel-inner">
+                                            {% for img in project.images %}
+											<div class="carousel-item {% if img.n == 0 %} active {% endif %}">
+												<img src="{{ img.url }}" alt="" class="d-block w-100"/>
+											</div>
+                                            {% endfor %}
                                         </div>
-                                        <div class="carousel-item">
-                                            <img src="./images/solarsystem.png" alt="" class="d-block w-100"/>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="./images/spheres.png" alt="" class="d-block w-100"/>
-                                        </div>
-                                    </div>
-                                    <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#slider">
-                                        <span class="carousel-control-prev-icon"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#slider">
-                                        <span class="carousel-control-next-icon"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
-                                </div>
+										<button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#slider">
+											<span class="carousel-control-prev-icon"></span>
+											<span class="visually-hidden">Previous</span>
+										</button>
+										<button class="carousel-control-next" data-bs-slide="next" data-bs-target="#slider">
+											<span class="carousel-control-next-icon"></span>
+											<span class="visually-hidden">Next</span>
+										</button>
+									</div>
+								{% endif %}
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="text-container">
-                                <h2 class="upper-case fw-bold">
-                                    minirt
-                                </h2>
-                                <p>PROJECT DESCRIPTION</p>
+									<div class="row">
+										<div class="col-md-6">
+											<a class="d-inline py-3" href="{{ project.github }}"><i class="fab fa-github fa-2x text-secondary"></i></a>
+										</div>
+										<div class="col-md-6">
+											<div class="d-flex w-100 justify-content-end">
+												<button class="btn d-inline btn-close btn-light" data-bs-dismiss="modal" aria-label="Close"></button>
+											</div>
+										</div>
+									</div>
+									<div class="d-flex w-100 justify-content-center">
+										<h2 class="upper-case fw-bold">
+											{{ project.title }}
+										</h2>
+									</div>
+									<!--
+									<div class="col-md-8">
+										<h2 class="upper-case fw-bold">
+											{{ project.title }}
+										</h2>
+									</div>
+									<div class="col-md-2">
+									<a class="py-3" href="{{ project.github }}"><i class="fab fa-github fa-2x text-secondary"></i></a>
+									</div>
+									<div class="col-md-2">
+										<button class="btn btn-close btn-light" data-bs-dismiss="modal" aria-label="Close"></button>
+									</div>
+								</div>
+									-->
+								<p>{{ project.description }}</p>
+								<h5 class="fw-bold text-secondary"> Skills and technology</h5>
                                 <ul class="list-group-list-group-flush-lh-lg">
+									{% for skill in project.skill %}
                                     <li class="list-group-item">
                                         <i class="fas fa-square text-primary"></i>
-                                        Skill 1
+										{{ skill.name }}
                                     </li>
+									{% endfor %}
+									{% for tech in project.tech %}
                                     <li class="list-group-item">
                                         <i class="fas fa-square text-primary"></i>
-                                        Skill 2
+										{{ tech.name }}
                                     </li>
+									{% endfor %}
                                 </ul>
-                                <button class="btn btn-light" data-bs-dismiss="modal">Close</button>
+								<div class="d-flex w-100 justify-content-end">
+								</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+		{% endfor %}
 
         <!-- footer-->
         <div class="footer text-bg-dark bg-gradient py-2 w-100">

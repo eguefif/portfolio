@@ -20,3 +20,7 @@ class Skill(models.Model):
 class Technology(models.Model):
     project = models.ManyToManyField(Project)
     name = models.CharField(max_length=60)
+
+class ProjectImage(models.Model):
+    project = models.ManyToManyField(Project)
+    image = models.FileField(upload_to="project_images/", blank=True)
