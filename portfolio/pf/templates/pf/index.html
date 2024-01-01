@@ -32,26 +32,32 @@
                 <h1 id="typing-text" class="display-1 fw-bold  text-white">
                 </h1>
 				<p class="roles text-white text-uppercase fs-4">{{ user.userprofile.role }}</p>
-                <a href="#about" class="btn btn-outline-light btn-lg mt-3">
-                    <div class="d-flex">
-                        <div class="me-3">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="text-start">
-                            <span>More About Me</span>
-                        </div>
+                <div class="row w-50 justify-content-center">
+                    <div class="col-6">
+                        <a href="#about" class="btn btn-outline-light btn-lg mt-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="text-start">
+                                    <span>More About Me</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                <a href="{{ user.userprofile.resume.url }}" class="btn btn-outline-light btn-lg mt-3">
-                    <div class="d-flex">
-                        <div class="me-3">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="text-start">
-                            <span>Download Resume</span>
-                        </div>
+                    <div class="col-6">
+                        <a href="{{ user.userprofile.resume.url }}" class="btn btn-outline-light btn-lg mt-3">
+                            <div class="d-flex">
+                                <div class="me-3">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                                <div class="text-start">
+                                    <span>Download Resume</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                </a>
+                </div>
             <div class="social d-flex gap-3 position-absolute">
 		    <a href="{{ user.userprofile.linkedin }}">
                     <i class="fab fa-linkedin fa-3x text-white"></i>
