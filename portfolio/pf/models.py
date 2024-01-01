@@ -31,5 +31,8 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     description = models.TextField(max_length = 2500)
     image = models.FileField(upload_to="media/", blank=True)
+    resume = models.FileField(upload_to="media/", blank=True)
     role = models.CharField(max_length=50)
     fullname = models.CharField(max_length=50)
+    github = models.URLField(max_length=240, default="")
+    linkedin = models.URLField(max_length=240, default="")
