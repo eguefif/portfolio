@@ -131,4 +131,4 @@ MEDIA_ROOT = "/home/eguefif/portfolio/portfolio/uploads/media/"
 MEDIA_URL = "media/"
 
 CSRF_COOKIE_SECURE = True
-SESSION_COOLIE_SECURE = True
+SESSION_COOKIE_SECURE = True
