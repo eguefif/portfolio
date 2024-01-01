@@ -127,7 +127,7 @@ STATIC_ROOT = "/var/www/static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 #MEDIA_ROOT = BASE_DIR / "uploads/"
-MEDIA_ROOT = "/home/eguefif/portfolio/portfolio/uploads"
+MEDIA_ROOT = "/home/eguefif/portfolio/portfolio/uploads/media/"
 MEDIA_URL = "media/"
 
 CSRF_COOKIE_SECURE = True
