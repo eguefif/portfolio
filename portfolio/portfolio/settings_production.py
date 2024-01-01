@@ -27,7 +27,7 @@ SECRET_KEY = secret_key
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["www.eguefif.org"]
+ALLOWED_HOSTS = ["www.eguefif.org", "165.227.125.229"]
 
 
 # Application definition
@@ -126,7 +126,8 @@ STATIC_ROOT = "/var/www/static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-MEDIA_ROOT = BASE_DIR / "uploads/"
+#MEDIA_ROOT = BASE_DIR / "uploads/"
+MEDIA_ROOT = "/home/eguefif/portfolio/portfolio/uploads"
 MEDIA_URL = "media/"
 
 CSRF_COOKIE_SECURE = True
