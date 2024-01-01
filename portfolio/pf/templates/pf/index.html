@@ -166,7 +166,7 @@ Lifelong learner, I made my first program when I was sixteen. It was a GCD calcu
             </div>
         </section>
 
-        <!-- modal 1 -->
+        <!-- modal -->
         {% for project in projects %}
 		<div id="modal{{ project.n }}" class="modal fade">
             <div class="modal-dialog modal-xl mt-7">
@@ -219,20 +219,6 @@ Lifelong learner, I made my first program when I was sixteen. It was a GCD calcu
 											{{ project.title }}
 										</h2>
 									</div>
-									<!--
-									<div class="col-md-8">
-										<h2 class="upper-case fw-bold">
-											{{ project.title }}
-										</h2>
-									</div>
-									<div class="col-md-2">
-									<a class="py-3" href="{{ project.github }}"><i class="fab fa-github fa-2x text-secondary"></i></a>
-									</div>
-									<div class="col-md-2">
-										<button class="btn btn-close btn-light" data-bs-dismiss="modal" aria-label="Close"></button>
-									</div>
-								</div>
-									-->
 								<p>{{ project.description }}</p>
 								<h5 class="fw-bold text-secondary"> Skills and technology</h5>
                                 <ul class="list-group-list-group-flush-lh-lg">
