@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Emmanuel Guefif PortFolio Website</title>
-    <meta name="description" content="Emmanuel Guefif portfolio" />
-    <meta name="keywords" content="Emmanuel Guefif portfolio raytracer shell programmer" />
+    <title>{{ user.userprofile.fullname }} PortFolio Website</title>
+    <meta name="description" content="{{ user.userprofile.fullname }}portfolio" />
+    <meta name="keywords" content="{{ user.userprofile.fullname }} portfolio raytracer shell programmer" />
     <meta name="robots" content="index,follow" />
 	<link rel="stylesheet" href="{% static 'pf/css/styles.css' %}">
 	<link rel="stylesheet" href="{% static 'pf/css/fontawesome.css' %}">
@@ -53,10 +53,10 @@
                     </div>
                 </a>
             <div class="social d-flex gap-3 position-absolute">
-                <a href="https://www.linkedin.com/feed/">
+		    <a href="{{ user.userprofile.linkedin }}">
                     <i class="fab fa-linkedin fa-3x text-white"></i>
                 </a>
-                <a href="https://github.com/eguefif">
+		<a href="{{ user.userprofile.github }}">
                     <i class="fab fa-github fa-3x text-white"></i>
                 </a>
             </div>
@@ -274,10 +274,10 @@
 				<div class="col-md-4">
 					<div class="d-flex w-100 justify-content-end">
 						<hstack class="gap3">
-							<a href="https://www.linkedin.com/feed/" class="">
+							<a href="{{ user.userprofile.linkedin }}" class="">
 								<i class="fab fa-linkedin fa-2x text-primary"></i>
 							</a>
-							<a href="https://github.com/eguefif" class="">
+							<a href="{{ user.userprofile.github }}" class="">
 								<i class="fab fa-github fa-2x text-primary"></i>
 							</a>
 						</hstack>
