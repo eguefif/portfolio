@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.template import loader, Context
+from django.contrib.auth.models import User
 
 from .models import Project, Skill, Technology, ProjectImage
 
@@ -22,6 +23,10 @@ def get_project_dict(db_project, n):
     project["n"] = n
     return project
 
+def get_user():
+    user = User.objects.get(username="eguefif")
+    return user
+
 
 def index(request):
     projects = []
@@ -31,6 +36,8 @@ def index(request):
     for i, db_project in enumerate(db_projects):
         projects.append(get_project_dict(db_project, i))
 
+    user = get_user()
     context = {
-            "projects": projects,}
+            "projects": projects,
+            "user": user,}
     return render(request, "pf/index.html", context)

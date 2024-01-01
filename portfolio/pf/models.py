@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Project(models.Model):
     title = models.CharField(max_length=50)
@@ -24,3 +26,10 @@ class Technology(models.Model):
 class ProjectImage(models.Model):
     project = models.ManyToManyField(Project)
     image = models.FileField(upload_to="media/", blank=True)
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    description = models.TextField(max_length = 2500)
+    image = models.FileField(upload_to="media/", blank=False)
+    role = models.CharField(max_length=50)
+    fullname = models.CharField(max_length=50)
