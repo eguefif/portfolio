@@ -30,7 +30,6 @@ class ProjectImage(models.Model):
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     description = models.TextField(max_length = 2500)
-    image = models.FileField(upload_to="media/", blank=False)
     resume = models.FileField(upload_to="media/", blank=False)
     role = models.CharField(max_length=50)
     fullname = models.CharField(max_length=50)
