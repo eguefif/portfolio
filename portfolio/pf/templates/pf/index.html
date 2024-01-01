@@ -177,10 +177,10 @@ Lifelong learner, I made my first program when I was sixteen. It was a GCD calcu
 								{% if project.img_nbr == 1 %}
 									<img src="{{ project.image.url }}" class="d-block w-100">
 								{% elif project.img_nbr > 1 %}
-									<div class="carousel slide" id="slider{{ img.n }}">
+									<div class="carousel slide" id="slider{{ project.n }}">
 										<div class="carousel-indicators">
                                             {% for img in project.images %}
-											<button data-bs-slide-to="{{ img.n }}" data-bs-target="#slider{{ img.n }}"></button>
+											<button data-bs-slide-to="{{ img.n }}" data-bs-target="#slider{{ project.n }}"></button>
                                             {% endfor %}
 										</div>
 										<div class="carousel-inner">
