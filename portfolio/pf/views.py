@@ -12,7 +12,7 @@ def get_project_dict(db_project, n):
     project["skill"] = Skill.objects.all().filter(project__title__contains=db_project.title)
     imgs = ProjectImage.objects.all().filter(project__title__contains=db_project.title)
     project["images"] = []
-    n = 1
+    n = 0
     for i in imgs:
         if i.image:
             project["images"].append({"n": n, "url": i.image.url})
