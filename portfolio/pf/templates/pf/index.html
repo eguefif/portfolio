@@ -32,9 +32,9 @@
                 <h1 id="typing-text" class="display-1 fw-bold  text-white">
                 </h1>
 				<p class="roles text-white text-uppercase fs-4">{{ user.userprofile.role }}</p>
-                <div class="row w-50 justify-content-center">
-                    <div class="col-6">
-                        <a href="#about" class="btn btn-outline-light btn-lg mt-3">
+                <div class="text-container align-items-center">
+                <div class="hero-btns d-flex gap-2 align-items-center h-100">
+                        <a href="#about" class="btn hero-btn btn-outline-light btn-lg mt-3">
                             <div class="d-flex">
                                 <div class="me-3">
                                     <i class="fas fa-chevron-down"></i>
@@ -44,9 +44,7 @@
                                 </div>
                             </div>
                         </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="{{ user.userprofile.resume.url }}" class="btn btn-outline-light btn-lg mt-3">
+                        <a href="{{ user.userprofile.resume.url }}" class="btn hero-btn btn-outline-light btn-lg mt-3">
                             <div class="d-flex">
                                 <div class="me-3">
                                     <i class="fas fa-chevron-down"></i>

@@ -62,4 +62,12 @@
   .about-content {
     flex-direction: column;
   }
+  .hero-btns {
+    flex-direction: column;
+  }
+  .hero-btn {
+    font-size: 12px;
+    margin: 1px;
+  }
+
 }
