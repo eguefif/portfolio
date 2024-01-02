@@ -59,6 +59,9 @@
   .header .roles {
     font-size: 18px !important;
   }
+  .project-title {
+    font-size: 18px !important;
+  }
   .about-content {
     flex-direction: column;
   }
